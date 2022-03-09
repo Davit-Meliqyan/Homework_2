@@ -8,6 +8,7 @@ import homework_21.task_4.Rectangle;
 import homework_21.task_4.Square;
 
 
+
 public class Test {
 
     public static void main(String[] args) {
