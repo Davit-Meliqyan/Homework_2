@@ -11,26 +11,6 @@ public class DefaultStack implements Stack {
         nums = new int[MAX_SIZE];
     }
 
-//    @Override
-//    public void push(int val) {
-//        try {
-//            nums[index] = val;
-//        } catch (StackIndexOutOfBoundsException e) {
-//
-//        }
-//
-//    }
-//
-//    @Override
-//    public int pop() {
-//       if(index ){
-//           Tr
-//       }
-//       else {
-//           return nums[++index];
-//       }
-//
-//    }
     @Override
     public void push(int val) {
         if (index == MAX_SIZE-1) {
