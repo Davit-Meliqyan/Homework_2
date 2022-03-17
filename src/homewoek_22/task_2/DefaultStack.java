@@ -1,36 +1,45 @@
 package homewoek_22.task_2;
 
+import java.util.LinkedList;
+
 public class DefaultStack implements Stack {
 
-    public int[] nums;
-    public int index ;
-    public int MAX_SIZE =5;
+    private final int[] nums;
+    public int index;
+    private static final int MAX_SIZE = 5;
 
     public DefaultStack() {
-        index = -1;
+        super();
         nums = new int[MAX_SIZE];
     }
 
     @Override
     public void push(int val) {
-        if (index == MAX_SIZE-1) {
-            throw new StackIndexOutOfBoundsException();
+        if (index == MAX_SIZE) {
+            throw new StackIndexOutOfBoundsException(
+                    this.index,
+                    MAX_SIZE);
         }
-        nums[++index] = val;
+        nums[index] = val;
+        index++;
     }
 
     @Override
     public int pop() {
-        if (index == -1) {
-            throw new EmptyStackException();
+        if (index == 0) {
+            throw new EmptyStackException("Stack is empty");
         }
-        return nums[index--];
+        int val = nums[this.index - 1];
+        this.nums[this.index - 1] = 0;
+        this.index--;
+        return val;
     }
 
     public void print() {
-        for (int i = index; i > -1; i--) {
+        for (int i = index-1; i > 0; i--) {
             System.out.println(nums[i]);
         }
         System.out.println("_______________________");
     }
+
 }

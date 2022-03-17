@@ -10,6 +10,9 @@ import homework_19.task_3.Marketing;
 import homework_19.task_3.SEO;
 import homework_19.task_3.SMM;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Test {
 
