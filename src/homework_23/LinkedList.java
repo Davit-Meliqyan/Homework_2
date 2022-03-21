@@ -1,12 +1,13 @@
 package homework_23;
 
-public class LinkedList implements List {
+import java.util.Set;
+
+public class LinkedList<T> implements List<T> {
 
     int size;
-    Node head;
+    Node<T> head;
 
     public LinkedList() {
-
     }
 
     public int size() {
@@ -17,20 +18,19 @@ public class LinkedList implements List {
         return size == 0;
     }
 
-    public int get(int index) {
+    public T get(int index) {
         Node node = head;
         if (index < size) {
             for (int i = 0; i < index; i++) {
                 node = node.next;
             }
-            return node.val;
+            return (T) node.val;
         }
         throw new IndexOutOfBoundsException("ERROR");
     }
 
     @Override
-    public void add(int val) {
-
+    public void add(T val) {
         if (head == null) {
             head = new Node(val);
         } else {
@@ -43,8 +43,23 @@ public class LinkedList implements List {
         size++;
     }
 
+//    @Override
+//    public void add(T val) {
+//
+//        if (head == null) {
+//            head = new Node(val);
+//        } else {
+//            Node node = head;
+//            while (node.next != null) {
+//                node = node.next;
+//            }
+//            node.next = new Node(val);
+//        }
+//        size++;
+//    }
+
     @Override
-    public void add(int index, int val) {
+    public void add(int index, T val) {
         if (index > size) {
             throw new IndexOutOfBoundsException("ERROR");
         } else {
@@ -62,20 +77,7 @@ public class LinkedList implements List {
     }
 
     @Override
-    public String toString() {
-        Node node = head;
-        StringBuilder str = new StringBuilder();
-        if (node != null) {
-            str.append(node.toString());
-            while (node.next != null) {
-                str.append(node.next.toString());
-                node = node.next;
-            }
-        }
-        return "{"+str.toString()+"null}";
-    }
-
-    void delete(int index) {
+    public void delete(int index) {
         if (index > size || size == 0) {
             throw new IndexOutOfBoundsException("ERROR");
         } else {
@@ -92,16 +94,42 @@ public class LinkedList implements List {
         size--;
     }
 
-    class Node {
+    @Override
+    public String toString() {
+        Node node = head;
+        StringBuilder str = new StringBuilder();
+        if (node != null) {
+            str.append(node.toString());
+            while (node.next != null) {
+                str.append(node.next.toString());
+                node = node.next;
+            }
+        }
+        return "{"+str.toString()+"null}";
+    }
+//    public String toString() {
+//        Node node = head;
+//        StringBuilder str = new StringBuilder();
+//        if (node.next != null) {
+//            // str.append(node.toString());
+//            while (node.next != null) {
+//                str.append(node.next.toString());
+//                node = node.next;
+//            }
+//        }
+//        return "{" + str.toString() + "null}";
+//    }
 
-        int val;
-        Node next;
+    class Node<T> {
 
-        public Node(int val) {
+        T val;
+        Node<T> next;
+
+        public Node(T val) {
             this.val = val;
         }
 
-        public Node(int val, Node next) {
+        public Node(T val, Node next) {
             this.val = val;
             this.next = next;
         }
@@ -111,6 +139,4 @@ public class LinkedList implements List {
             return "" + val + "->";
         }
     }
-
-
 }

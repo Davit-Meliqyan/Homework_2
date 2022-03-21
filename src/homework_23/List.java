@@ -1,16 +1,16 @@
 package homework_23;
 
-public interface List {
+public interface List<T> {
 
     int size();
 
     boolean isEmpty() ;
 
-    int get(int index);
+    T get(int index);
 
-    void add(int val);
+    void add(T val);
 
-    void add(int index, int val);
+    void add(int index, T val);
 
-//    void delete(int index);
+    void delete(int index);
 }
