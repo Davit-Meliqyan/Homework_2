@@ -68,7 +68,7 @@ public class Test {
                 set2.add(e);
             }
         }
-        for (T e : set1) {
+        for (T e : arr) {
             boolean bool = true;
             for (T l : set2) {
                 if (e.equals(l)) {
@@ -113,11 +113,11 @@ public class Test {
     public static void main(String[] args) {
 
         Integer[] arr = {0, 1, 5, 0, 7, 1, 5};
-//        System.out.println(checkDuplicate(arr));
+//       System.out.println(checkDuplicate(arr));
 //        System.out.println(dup(arr));
 //        System.out.println(onlyOnce(arr));
 
-        String str = "bbjklccga";
+        String str = "bbjklccgaj";
         System.out.println(checkDuplicate(toCharList(str)));
         System.out.println(duplicateCount(toCharList(str)));
         System.out.println(onlyOnceCount(toCharList(str)));
