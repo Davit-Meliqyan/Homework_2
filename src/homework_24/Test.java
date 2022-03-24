@@ -93,7 +93,7 @@ public class Test {
         return count;
     }
 
-    static Character[] toCharList(String str) {
+    static Character[] toCharArray(String str) {
         if (str == null) {
             return null;
         }
@@ -112,19 +112,27 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Integer[] arr = {0, 1, 5, 0, 7, 1, 5};
+        Integer[] arr = {54545454,154545445};
 //       System.out.println(checkDuplicate(arr));
 //        System.out.println(dup(arr));
 //        System.out.println(onlyOnce(arr));
 
-        String str = "bbjklccgaj";
-        System.out.println(checkDuplicate(toCharList(str)));
-        System.out.println(duplicateCount(toCharList(str)));
-        System.out.println(onlyOnceCount(toCharList(str)));
-        System.out.println(longestSubstringWithoutRepeating(toCharList(str)));
-        print(onlyOnceElements(toCharList(str)));
-        System.out.println();
-        System.out.println(onlyOnceFirstElements(toCharList(str)));
-
+//        String str = "bbaananamkloi";
+//        System.out.println(checkDuplicate(toCharArray(str)));
+//        System.out.println(duplicateCount(toCharArray(str)));
+//        System.out.println(onlyOnceCount(toCharArray(str)));
+//        System.out.println(longestSubstringWithoutRepeating(toCharArray(str)));
+//        print(onlyOnceElements(toCharArray(str)));
+//        System.out.println();
+//        System.out.println(onlyOnceFirstElements(toCharArray(str)));
+//        System.out.println(onlyOnceFirstElements(arr));
+//
+        Set<Integer> set = new HashSet<>();
+        for (Integer e:arr) {
+            set.add(e);
+        }
+        for (Integer e:set) {
+            System.out.println(e);
+        }
     }
 }
